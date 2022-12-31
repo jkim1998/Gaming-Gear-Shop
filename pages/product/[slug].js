@@ -7,7 +7,7 @@ import {
 } from "react-icons/ai";
 import Image from "next/image";
 import { client, urlFor } from "../../lib/client";
-import { Product } from "../../components";
+import { Product } from "../../Components";
 import { useStateContext } from "../../context/StateContext";
 
 const ProductDetails = ({ product, products }) => {
