@@ -5,7 +5,7 @@ import {
   AiFillStar,
   AiOutlineStar,
 } from "react-icons/ai";
-import Image from 'next/image';
+import Image from "next/image";
 import { client, urlFor } from "../../lib/client";
 import { Product } from "../../Components";
 import { useStateContext } from "../../context/StateContext";
@@ -26,23 +26,23 @@ const ProductDetails = ({ product, products }) => {
       <div className="product-detail-container">
         <div>
           <div className="image-container">
-              <Image
-                src={urlFor(image && image[index])}
-                className="product-detail-image"
-                alt="product image"
-              />
+            <img
+              src={urlFor(image && image[index])}
+              className="product-detail-image"
+              alt="product image"
+            />
           </div>
           <div className="small-images-container">
             {image?.map((item, i) => (
-                <Image
-                  alt="product small image"
-                  key={i}
-                  src={urlFor(item)}
-                  className={
-                    i === index ? "small-image selected-image" : "small-image"
-                  }
-                  onMouseEnter={() => setIndex(i)}
-                />
+              <img
+                alt="product small image"
+                key={i}
+                src={urlFor(item)}
+                className={
+                  i === index ? "small-image selected-image" : "small-image"
+                }
+                onMouseEnter={() => setIndex(i)}
+              />
             ))}
           </div>
         </div>
