@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { BsBagCheckFill } from 'react-icons/bs';
 
-import { useStateContext } from '../context/StateContext';
+import { useStateContext } from '../context/stateContext';
 import { runFireworks } from '../lib/utils';
 
 const Success = () => {
@@ -27,7 +27,7 @@ const Success = () => {
         <p className="description">
           If you have any questions, please email
           <a className="email" href="mailto:order@example.com">
-            order@example.com
+            Jonathankim980@gmail.com
           </a>
         </p>
         <Link href="/" passHref>
