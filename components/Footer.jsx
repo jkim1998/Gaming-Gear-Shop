@@ -16,7 +16,7 @@ const Footer = () => {
     emailjs
       .sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SUB_SERVICE,
-        process.env. NEXT_PUBLIC_EMAILJS_SUB_TEMPLATE,
+        process.env.NEXT_PUBLIC_EMAILJS_SUB_TEMPLATE,
         form.current,
         process.env.NEXT_PUBLIC_EMAILJS_SUB_API
       )
@@ -48,7 +48,13 @@ const Footer = () => {
         <div className="category">
           <h1>About</h1>
           <a href="contact">Contact me</a>
-          <a href="https://github.com/jkim1998/Movie-DB-" target="_blank">Source Code</a>
+          <a
+            href="https://github.com/jkim1998/Movie-DB-"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Source Code
+          </a>
         </div>
         <div className="category">
           <h1>Services</h1>

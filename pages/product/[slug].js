@@ -10,9 +10,9 @@ import { client, urlFor } from "../../lib/client";
 import { Product } from "../../components";
 import { useStateContext } from "../../context/StateContext";
 
-function countInitial() {
-  const [qty, setQty] = useState(1);
-}
+// function countInitial() {
+//   const [qty, setQty] = useState(1);
+// }
 
 
 const ProductDetails = ({ product, products }) => {
@@ -26,7 +26,7 @@ const ProductDetails = ({ product, products }) => {
 
     setShowCart(true);
 
-    countInitial;
+    // countInitial;
   };
 
   return (
