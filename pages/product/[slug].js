@@ -8,7 +8,7 @@ import {
 import Image from "next/image";
 import { client, urlFor } from "../../lib/client";
 import { Product } from "../../components";
-import { useStateContext } from "../../context/StateContext";
+import { useStateContext } from "../../context/stateContext";
 
 // function countInitial() {
 //   const [qty, setQty] = useState(1);
