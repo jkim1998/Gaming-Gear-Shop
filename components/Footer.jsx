@@ -1,109 +1,129 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { AiFillGithub, AiFillLinkedin, AiOutlineBold } from "react-icons/ai";
 
 const Footer = () => {
-  const url = process.env.GITHUB_LINK;
-
   const form = useRef();
 
+  const [status, setStatus] = useState("");
+  const [error_email, setErrorEmail] = useState("");
+
   const sendEmail = (e) => {
+    //prevent re-render
     e.preventDefault();
 
     emailjs
       .sendForm(
-        NEXT_PUBLIC_EMAILJS_SERVICE,
-        NEXT_PUBLIC_EMAILJS_TEMPLATE,
+        process.env.NEXT_PUBLIC_EMAILJS_SUB_SERVICE,
+        process.env. NEXT_PUBLIC_EMAILJS_SUB_TEMPLATE,
         form.current,
-        NEXT_PUBLIC_EMAILJS_API
+        process.env.NEXT_PUBLIC_EMAILJS_SUB_API
       )
       .then(
         (result) => {
           console.log(result.text);
-          console.log("message sent");
+          // console.log("message sent");
+          setStatus("SUCCESS");
         },
         (error) => {
           console.log(error.text);
+          setStatus("FAILED");
         }
       );
   };
+
+  // success message time out after certain time(3000)
+  // useEffect(() => {
+  //   if (status === "SUCCESS") {
+  //     setTimeout(() => {
+  //       setStatus("");
+  //     }, 3000);
+  //   }
+  // }, [status]);
+
   return (
     <div className="footer-container">
       <div className="footer-top">
         <div className="category">
-          <h>About</h>
-          <a>Logitech Story</a>
-          <a>Careers</a>
-          <a>Investors</a>
-          <a>Blog</a>
-          <a>Press</a>
-          <a>Contact us</a>
+          <h1>About</h1>
+          <a href="contact">Contact me</a>
+          <a href="https://github.com/jkim1998/Movie-DB-" target="_blank">Source Code</a>
         </div>
         <div className="category">
-          <h>Values</h>
-          <a>Social Impact</a>
-          <a>Sustainability</a>
-          <a>Recylcing</a>
-          <a>Acesssibvility</a>
+          <h1>Services</h1>
+          <a href="help">Help Center</a>
         </div>
-        <div className="category">
-          <h>Partners</h>
-          <a>Affilate Program</a>
-          <a>Influencer</a>
-        </div>
-        <div className="category">
-          <h>Customers</h>
-          <a>Return Policy</a>
-          <a>Email Preferences</a>
-          <a>Student Discount</a>
+        <div className="category text_align_right">
+          <h1>Contact Info</h1>
+          <span>Jonathan Kim</span>
+          <span>(737) 484 - 2504</span>
+          <span>JonathanKim980@gmail.com</span>
         </div>
       </div>
       <div className="footer-bot">
         <div className="social">
           <p className="icons">
-            <a href="https://github.com/jkim1998" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://github.com/jkim1998"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <AiFillGithub />
             </a>
-            <a href="https://www.linkedin.com/in/jkim980/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.linkedin.com/in/jkim980/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <AiFillLinkedin />
             </a>
-            <a href="https://jonathankim980.com" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://jonathankim980.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <AiOutlineBold />
             </a>
           </p>
         </div>
         <div className="contactMe">
-          <form ref={form} onSubmit={sendEmail}>
-            <div className="subscribe_container">
-              <div className="email_container">
-                <input
-                  type="email"
-                  name="user_email"
-                  placeholder="your email address"
-                  className="email"
-                />
+          {status && renderAlert()}
+          {!status && (
+            <form ref={form} onSubmit={sendEmail}>
+              <div className="subscribe_container">
+                <div className="email_container">
+                  <input
+                    type="email"
+                    name="user_email"
+                    placeholder="your email address"
+                    className="email"
+                    required="required"
+                    onInvalid={invalidEmail()}
+                  />
+                </div>
+                <input type="submit" value="Subscribe" className="send" />
               </div>
-              <input type="submit" value="Subscribe" className="send" />
-            </div>
-            <label className="subscribe">
-            <input type="checkbox" />
-            <span>Yes, I want to receive news and product emails.</span>
-            <br />
-            Read our
-          </label>
-          <span>
-            <a href="http://www.google.com" target="_blank" rel="noopener noreferrer" className="policy">
-              privacy policy.
-            </a>
-          </span>
-          </form>
+              <input type="checkbox" required="required" />
+              <span>Yes, I want to sign up for newsletter. </span>
+              {/* Read our
+              <span>
+                <a
+                  href="http://www.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="policy"
+                >
+                  privacy policy.
+                </a>
+              </span> */}
+            </form>
+          )}
         </div>
       </div>
       <div className="footer_footer">
         <div className="copyright">
-          <p>©2022 Jonathan Kim. All rights reserved</p> |<a>Terms of Use</a> |
-          <a>Web Privacy Policy</a> |<a>Product Privacy Policy</a> |
-          <a>Cookie Settings</a> |<a>Sitemap</a>
+          <p>©2022 Jonathan Kim. All rights reserved</p>
         </div>
         <div>
           <p>United States</p>
@@ -111,6 +131,17 @@ const Footer = () => {
       </div>
     </div>
   );
+};
+const renderAlert = () => (
+  <div className="confirmation">
+    <p>You are Subscribed to Newsletter!</p>
+  </div>
+);
+
+const invalidEmail = () => {
+  <div>
+    <p>this is required</p>
+  </div>;
 };
 
 export default Footer;
