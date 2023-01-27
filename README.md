@@ -1,4 +1,4 @@
-# ![WebApp](https://github.com/jkim1998/Movie-DB-/blob/main/screenshot/page1.png)
+# ![WebApp](https://github.com/jkim1998/Gaming-Gear-Shop/blob/main/screenshot/main.png)
 # Gaming Gear Shop App
 <table>
 <tr>
@@ -11,45 +11,31 @@
 
 ## Demo
 Here is a working live demo :  
-https://movie-db-sand.vercel.app/
+https://gaming-gear-shop.vercel.app/
 
 
 ## Site | Features
 
 ### Main Page
 
-# ![WebApp](https://github.com/jkim1998/Movie-DB-/blob/main/screenshot/page1.png)
-
-### Search bar
-
-Search for movies in the search bar.
-You can either click or press enter.
-
-# ![WebApp](https://github.com/jkim1998/Movie-DB-/blob/main/screenshot/search.png)
-# ![WebApp](https://github.com/jkim1998/Movie-DB-/blob/main/screenshot/searchbar.png)
-
-make sure to use correct keyword
-
-# ![WebApp](https://github.com/jkim1998/Movie-DB-/blob/main/screenshot/not%20found.png)
-
-### Movie Details
-
-Click the poster to open a pop-up that displays detailed information about the movie. click anywhere outside to exit 
-
-# ![WebApp](https://github.com/jkim1998/Movie-DB-/blob/main/screenshot/moviedetail.png)
-
-### Footer
-
-A short section that contains brief information about the page 
-
-# ![WebApp](https://github.com/jkim1998/Movie-DB-/blob/main/screenshot/footer.png)
+# ![WebApp](https://github.com/jkim1998/Gaming-Gear-Shop/blob/main/screenshot/main.png)
 
 
-### Contact me page
+### Product Page
 
-You can send me an Email on this page. Please fill out your name and email address so I can get back to you!
+# ![WebApp](https://github.com/jkim1998/Gaming-Gear-Shop/blob/main/screenshot/product.png)
+# ![WebApp](https://github.com/jkim1998/Gaming-Gear-Shop/blob/main/screenshot/cart.png)
 
-# ![WebApp](https://github.com/jkim1998/Movie-DB-/blob/main/screenshot/contact.png)
+
+### Check Out
+
+# ![WebApp](https://github.com/jkim1998/Gaming-Gear-Shop/blob/main/screenshot/checkout.png)
+
+
+### Confirmation Page
+
+# ![WebApp](https://github.com/jkim1998/Gaming-Gear-Shop/blob/main/screenshot/confirmation.png)
+
 
 ## Mobile support
 This WebApp is fully compatible with mobile devices of all sizes and all OS's, and consistent improvements are being made.
@@ -81,9 +67,9 @@ To fix a bug or enhance an existing module, follow these steps:
 
 ### Bug / Feature Request
 
-If you found a bug and would like to create an issue for this repository, click [here](https://github.com/jkim1998/Movie-DB-/issues/new).
+If you found a bug and would like to create an issue for this repository, click [here](https://github.com/jkim1998/Gaming-Gear-Shop/issues/new).
 
-If you would like to request a new feature, feel free to do so by opening an issue [here](https://github.com/jkim1998/Movie-DB-/issues/new).
+If you would like to request a new feature, feel free to do so by opening an issue [here](https://github.com/jkim1998/Gaming-Gear-Shop/issues/new).
 
 Thank you in advance.
 
@@ -96,15 +82,7 @@ Thank you in advance.
 ## Others
 
 - Deployment: Vercel
+- Back End: Sanity 
+- Check out: Stripe
 
 ## To-do
-#High priority
-- mobile, zoomed in/out style 
-- counter reset on new prodcut page or added to cart/shop now 
-- contact me page
-- color theme 
-- search for product 
-- category for prodcuts (sort)
-- display by 25/50/100 products and multiple pages
-- footer banner style
-- instruction that the products are not actually on sale on checkout and on visit(pop up with option to not display for ~days)
